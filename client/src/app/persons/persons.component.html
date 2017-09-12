@@ -1,0 +1,10 @@
+<p>
+  Liste des personnes
+</p>
+
+<ng-container *ngIf='persons'>
+  <div *ngFor='let person of persons'>
+    {{person.id}} : {{person.firstName}} {{person.lastName}}
+  </div>
+</ng-container>
+
