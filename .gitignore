@@ -49,4 +49,5 @@ Thumbs.db
 /server/*/Properties/PublishProfiles
 /server/wwwDrh
 /server/.vs
+/server/packages
 
