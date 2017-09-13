@@ -111,11 +111,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\PersonsController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -131,6 +131,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Drh.Dtos\Drh.Dtos.csproj">
+      <Project>{2f8a59a9-9190-40b2-b39f-276690fe6df1}</Project>
+      <Name>Drh.Dtos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Drh.Entities\Drh.Entities.csproj">
+      <Project>{842cf34d-33e0-4f4d-9a54-c59355f6bb39}</Project>
+      <Name>Drh.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Drh.Services\Drh.Services.csproj">
+      <Project>{E8AB2480-CB82-4FB1-AE8C-C58C43FE3BD4}</Project>
+      <Name>Drh.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

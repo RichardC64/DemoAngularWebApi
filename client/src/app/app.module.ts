@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PersonsComponent } from './persons/persons.component';
-import { PersonsService } from './services/persons.service';
+import { PersonService } from './services/person.service';
+import { CompanyService } from './services/company.service';
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { PersonsService } from './services/persons.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,7 +27,10 @@ import { PersonsService } from './services/persons.service';
       { path: 'persons', component: PersonsComponent }
     ])
   ],
-  providers: [PersonsService],
+  providers: [
+    PersonService,
+    CompanyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,10 +1,23 @@
 <p>
-  Liste des personnes
+  Liste des personnes par compagnie
 </p>
 
-<ng-container *ngIf='persons'>
-  <div *ngFor='let person of persons'>
-    {{person.id}} : {{person.firstName}} {{person.lastName}}
-  </div>
-</ng-container>
+<div *ngIf='companies'>
+  <select [(ngModel)]='selectedCompany'>
+    <option *ngFor="let company of companies" [ngValue]='company'>{{company.name}}</option>
+  </select>
+</div>
 
+<div *ngIf='companyPersons'>
+  <div>{{companyPersons.totalCount}} personnes dans {{companyPersons.name}}</div>
+  <div *ngFor='let person of companyPersons.persons'>
+    {{person.firstName}} {{person.lastName}}
+  </div>
+  <div>
+    <span *ngFor='let pageIndex of pageIndexes'>
+      <button (click)='onChangePageIndex(pageIndex)' [ngClass]="currentPageIndex === pageIndex - 1 ? 'currentPageIndex' : ''">
+        {{pageIndex}}
+      </button>
+    </span>
+  </div>
+</div>

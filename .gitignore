@@ -52,3 +52,6 @@ Thumbs.db
 /server/.vs
 /server/packages
 
+#NDepend
+/server/NDependOut
+
